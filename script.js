@@ -32,27 +32,31 @@ function startTime() {
   hourShow.innerHTML = hourInp.value < 10 ? `0${hourInp.value}` : hourInp.value
   secShow.innerHTML = sec < 10 ? `0${sec}` : sec
   minShow.innerHTML = minInp.value < 10 ? `0${minInp.value}` : minInp.value
-  min = parseInt(minShow.innerHTML)
-  hour = parseInt(hourShow.innerHTML)
+  min = parseInt(minInp.value)
+  hour = parseInt(hourInp.value)
+
   let timer = setInterval(() => {
-    if (hourShow.innerHTML == 00 && minShow.innerHTML == 00) {
-      console.log("alarm")
-      audio.play()
-      setTimeout(() => audio.pause(), 7000)
-      secShow.innerHTML = "00"
-      btn.innerText = "Set Timer"
-      clearInterval(timer)
-    } else {
-      sec--
-      secShow.innerHTML = sec < 10 ? `0${sec}` : sec
-      if (secShow.innerHTML == "00") {
-        sec = 60
-        min--
-        minShow.innerHTML = min < 10 ? `0${min}` : min
+    setTimeout(() => {
+      if (hourShow.innerHTML == "00" && minShow.innerHTML == "00") {
+        audio.play()
+        setTimeout(() => audio.pause(), 7000)
+        secShow.innerHTML = "00"
+        btn.innerText = "Set Timer"
+        clearInterval(timer)
       }
-      if (minShow.innerHTML == "00" && hour > 0) {
+    }, 100)
+    sec--
+    secShow.innerHTML = sec < 10 ? `0${sec}` : sec
+    if (secShow.innerHTML == "00") {
+      sec = 60
+      min--
+      if (minShow.innerHTML == "00" && hourShow.innerHTML != 00) {
+        min = 59
         hour--
+        minShow.innerHTML = min < 10 ? `0${min}` : min
         hourShow.innerHTML = hour < 10 ? `0${hour}` : hour
+      } else {
+        minShow.innerHTML = min < 10 ? `0${min}` : min
       }
     }
   }, 1000)
