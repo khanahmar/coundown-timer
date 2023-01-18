@@ -40,6 +40,7 @@ function startTime() {
       audio.play()
       setTimeout(() => audio.pause(), 7000)
       secShow.innerHTML = "00"
+      btn.innerText = "Set Timer"
       clearInterval(timer)
     } else {
       sec--

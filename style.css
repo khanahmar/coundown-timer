@@ -7,10 +7,14 @@
 }
 
 body {
+  background-image: url("back-img.jpg");
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: rgb(230, 230, 230);
 }
 
 .main {
@@ -18,10 +22,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: gray;
   padding: 40px;
   border-radius: 4px;
-  font-size: 20px;
+  font-size: 30px;
+  height: 55vh;
+  letter-spacing: 1px;
 }
 
 .show-time {
@@ -36,8 +41,102 @@ body {
   justify-content: center;
   align-items: center;
   margin: 3px 20px;
+  background-color: rgb(149, 41, 41);
+  padding: 10px;
+  border-radius: 4px;
+  width: 200px;
 }
 
 .btn {
   margin: 10px 0px;
+}
+
+p {
+  font-size: 40px;
+  color: rgb(207, 179, 188);
+}
+
+input {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: rgb(153, 41, 41);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin: 0px 10px;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-time {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  width: 400px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+label {
+  color: rgb(109, 14, 14);
+  font-weight: 600;
+}
+
+button {
+  background-color: rgb(40, 84, 79);
+  border: none;
+  padding: 8px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 3px;
+  width: 400px;
+  transition: 0.2s;
+}
+
+h1 {
+  color: rgb(90, 20, 20);
+}
+
+button:hover {
+  background-color: rgb(40, 117, 116);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+@media only screen and (max-width: 1400px) {
+  body {
+    background-image: url("back-img.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgb(230, 230, 230);
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .main {
+    height: 30vh;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: -230px;
+  }
+  .col {
+    padding: 10px;
+  }
 }
