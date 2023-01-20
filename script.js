@@ -24,7 +24,7 @@ function startTime() {
     resetTime()
     return
   }
-  let sec = 60
+  let sec = 59
   let min = 0
   let hour = 0
 
@@ -48,7 +48,7 @@ function startTime() {
     sec--
     secShow.innerHTML = sec < 10 ? `0${sec}` : sec
     if (secShow.innerHTML == "00") {
-      sec = 60
+      sec = 59
       min--
       if (minShow.innerHTML == "00" && hourShow.innerHTML != 00) {
         min = 59
