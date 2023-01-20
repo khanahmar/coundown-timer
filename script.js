@@ -47,8 +47,8 @@ function startTime() {
     }, 100)
     sec--
     secShow.innerHTML = sec < 10 ? `0${sec}` : sec
-    if (secShow.innerHTML == "00") {
-      sec = 59
+    if (sec == 0) {
+      sec = 60
       min--
       if (minShow.innerHTML == "00" && hourShow.innerHTML != 00) {
         min = 59
